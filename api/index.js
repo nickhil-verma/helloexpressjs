@@ -4,8 +4,9 @@ const serverless = require("serverless-http");
 
 const app = express();
 
-app.get("/api/hello", (req, res) => {
-  res.json({ message: "🚀 Hello from Express on Vercel!" });
+// ✅ This is now correct: root route inside handler
+app.get("/", (req, res) => {
+  res.json({ message: "✅ Hello from Express on Vercel!" });
 });
 
 module.exports = app;
